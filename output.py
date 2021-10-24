@@ -22,7 +22,7 @@ def select_speed():
             print("Selected speed: ", speed)
             return speed
 
-def assign_motor_speed(direction, mwv):
+def assign_motor_speed(direction, pwm):
     #direction: forward
     if direction == "w":
         m1.direction = "f"
@@ -53,10 +53,10 @@ def assign_motor_speed(direction, mwv):
 
     #digital input scaling to 255
     #where 0 corresponds to 0 (stopped), 5 corresponds to 255 (top speed)
-    m1.speed = int(mwv * 255 / 5)
-    m2.speed = int(mwv * 255 / 5)
-    m3.speed = int(mwv * 255 / 5)
-    m4.speed = int(mwv * 255 / 5)
+    m1.speed = int(pwm * 255 / 5)
+    m2.speed = int(pwm * 255 / 5)
+    m3.speed = int(pwm * 255 / 5)
+    m4.speed = int(pwm * 255 / 5)
 
 def display_motor_speed():
     print("[", m1.direction, m1.speed, "]", sep='', end='')
@@ -83,6 +83,7 @@ conn, addr = s.accept()
 
 #selecting the speed of rover
 speed = select_speed()
+print("Select direction using 'w', 'a', 's', 'd', and ESC to exit.")
 
 while True:
     direction = receive_input()   #selecting direction of rover
