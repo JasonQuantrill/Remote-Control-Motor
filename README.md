@@ -1,5 +1,3 @@
-# R3-SoftwareTask2-JasonQuantrill
-
 Using keyboard as input method.
 
 ![image](https://user-images.githubusercontent.com/91751222/138609154-d3341b63-0bce-43ff-ac23-2e3c68248e46.png)
